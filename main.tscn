@@ -17,7 +17,7 @@ size = Vector2(1154, 127)
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_glceg")]
-position = Vector2(524, 482)
+position = Vector2(519, 316)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(515, 577)

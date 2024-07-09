@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://nytuw8aecu2s"]
+
+[ext_resource type="Texture2D" uid="uid://cdtvalsef8wcr" path="res://Bangarang.png" id="1_agkfg"]
+[ext_resource type="Script" path="res://bangarang.gd" id="1_gjima"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nceo7"]
+radius = 22.0
+height = 72.449
+
+[node name="Bangarang" type="RigidBody2D"]
+script = ExtResource("1_gjima")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -0.663225
+shape = SubResource("CapsuleShape2D_nceo7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_agkfg")
