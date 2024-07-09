@@ -3,13 +3,14 @@ extends RigidBody2D
 var velocity = Vector2.ZERO
 
 # Set initial velocity
-func _init(velocity):
+func init(velocity):
 	self.velocity = velocity
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Set linear velocity
 	linear_velocity = velocity
+	connect("body_entered", _on_body_entered)
 
 func _integrate_forces(state):
 	# Apply boomerang arc
@@ -20,10 +21,10 @@ func _integrate_forces(state):
 func explode():
 	print("explosion")
 
-func _on_Area2D_body_entered(body):
+func _on_body_entered(body):
 	# Handles collision with other objects
-	explode()
-	queue_free()
+	if body.is_in_group("Floor"):
+		queue_free()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

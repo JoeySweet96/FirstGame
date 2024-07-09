@@ -8,6 +8,8 @@ radius = 22.0
 height = 72.449
 
 [node name="Bangarang" type="RigidBody2D"]
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_gjima")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
